@@ -9,32 +9,77 @@ import {
   TouchableHighlight,
 } from 'react-native';
 import css from './MyPoolsScreen.style'
-import BooleanPoll from '../Shared/BooleanPoll/BooleanPoll'
-import DatePoll from '../Shared/DatePoll/DatePoll'
-import OptionsPoll from '../Shared/OptionsPoll/OptionsPoll'
+
 import imgBall from '../../../img/soccer-ball.png'
 import imgFriends from '../../../img/friends.png'
 import imgFood from '../../../img/food.png'
 
+import imgBooleanAnswer from '../../../img/booleanAnswer.png'
+import imgDateAnswer from '../../../img/calendar.png'
+import imgOptionsAnswer from '../../../img/left-arrow.png'
+
 export default class MyPoolsScreen extends Component {
+
+  componentWillMount(){
+    this.props.getPolls()
+  }
+
   render() {
+
+    const polls = (
+      this.props.pollList.map(pull => {
+
+        let imgPollType = null
+        let imgPollCategory = null
+
+        if (pull.type === "boolean") imgPollType = imgBooleanAnswer
+        else if (pull.type === "date") imgPollType = imgDateAnswer
+        else if (pull.type === "options") imgPollType = imgOptionsAnswer
+
+        if (pull.category === "football") imgPollCategory = imgBall
+        else if (pull.category === "food") imgPollCategory = imgFood
+        else if (pull.category === "group") imgPollCategory = imgFriends
+
+
+        return (
+
+          <View
+            style={css.pollContainer}
+            key = {pull.id}
+          >
+            <View style={css.imageContainer} >
+              <Image
+                source = {imgPollCategory}
+                style = {css.img}
+              >
+              </Image>
+            </View>
+            <View style={css.textContainer} >
+              <Text style={css.textTitle}>
+                {pull.title}
+              </Text>
+              <Text style={css.textDescription}>
+                {pull.description}
+              </Text>
+            </View>
+            <View style={css.imageContainer} >
+              <Image
+                source = {imgPollType}
+                style = {css.img}
+              >
+              </Image>
+            </View>
+          </View>
+
+        )
+
+      })
+
+    )
+
     return (
       <View style={css.container} >
-        <BooleanPoll
-          title = 'FUTBOL'
-          description = 'Partida de los martes a las 19hs'
-          pollImg = {imgBall}
-        />
-        <DatePoll
-          title = 'CENA'
-          description = 'Cuando comemos?'
-          pollImg = {imgFood}
-        />
-        <OptionsPoll
-          title = 'AMIGOS'
-          description = 'Cuanto ponemos para el asado de las 21hs'
-          pollImg = {imgFriends}
-        />
+        {polls}
       </View>
     );
   }

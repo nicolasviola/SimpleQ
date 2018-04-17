@@ -26,26 +26,22 @@ export default StyleSheet.create({
 
   headerStyleNavOpt: {
     backgroundColor: '#C2CCD8',
-    height: 50,
   },
 
   labelStyleMainMenu: {
     fontSize: 20,
     color: 'white',
-    height: 20,
     display: 'flex',
     justifyContent: 'center',
   },
 
   headerStyleStNav: {
     backgroundColor: '#2E368B',
-    height: 55,
   },
 
   labelStyleNavigation: {
     fontSize: 20,
     color: 'black',
-    height: 20,
     display: 'flex',
     justifyContent: 'center',
   },
