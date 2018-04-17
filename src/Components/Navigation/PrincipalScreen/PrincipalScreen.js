@@ -44,17 +44,16 @@ export default class PrincipalScreen extends Component {
       tabBarPosition: 'top',
       tabBarOptions: {
         showLabel: true,
-        activeBackgroundColor: '#2E368B',
-        inactiveTintColor: 'black',
-        activeTintColor: 'white',
-        inactiveBackgroundColor: '#2E368B',
+        activeBackgroundColor: 'white',
+        inactiveTintColor: 'grey',
+        activeTintColor: 'black',
+        inactiveBackgroundColor: 'white',
         style: {
           backgroundColor: 'white',
-          height: 40,
+          // height: 60,
         },
         labelStyle: {
           fontSize: 15,
-          // color: 'black',
           marginBottom: 8,
         },
       },
