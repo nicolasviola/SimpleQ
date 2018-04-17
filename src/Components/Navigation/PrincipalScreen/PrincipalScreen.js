@@ -7,11 +7,11 @@ import {
   View,
   Image,
   TouchableHighlight,
-} from 'react-native';
-import { TabNavigator } from 'react-navigation';
+} from 'react-native'
+import { TabNavigator } from 'react-navigation'
 import css from './PrincipalScreen.style'
 import PollsScreen from '../../PollsScreen/PollsScreen.js'
-import MyPoolsScreen from '../../MyPoolsScreen/MyPoolsScreen.js'
+import MyPoolsScreen from '../../MyPoolsScreen'
 import ContactsScreen from '../../ContactsScreen/ContactsScreen.js'
 
 

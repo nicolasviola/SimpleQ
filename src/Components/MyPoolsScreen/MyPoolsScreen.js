@@ -17,7 +17,15 @@ import imgFriends from '../../../img/friends.png'
 import imgFood from '../../../img/food.png'
 
 export default class MyPoolsScreen extends Component {
+
+  componentWillMount(){
+    this.props.getPolls()
+  }
+
   render() {
+
+    console.log(this.props);
+
     return (
       <View style={css.container} >
         <BooleanPoll
