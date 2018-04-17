@@ -1,5 +1,5 @@
 const initialState = {
-  pollList: '',
+  pollList: [],
 }
 
 export default initialState

@@ -4,6 +4,7 @@ import {
 } from './const'
 
 const reducer = (state = initialState, action) => {
+  console.log('action aaaaaa', action);
   if (action.type === GET_POLLS) {
     return {
       ...state,

@@ -4,11 +4,12 @@
 import {
   GET_POLLS,
 } from './const'
+import {data} from './mock.js'
 
 export const getPolls = () => (dispatch) =>
     dispatch({
       type: GET_POLLS,
-      payload: 'holaaa',
+      payload: data,
     })
 
 // export const addToCart = product => {
