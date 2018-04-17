@@ -4,14 +4,14 @@ import {
 } from './const'
 
 const reducer = (state = initialState, action) => {
-  console.log('action aaaaaa', action);
-  if (action.type === GET_POLLS) {
+
+  if (action.type === `${GET_POLLS}_FULFILLED`) {
     return {
       ...state,
-      pollList: action.payload,
-      // productList: state.productList.concat(action.products),
+      pollList: action.payload.data,
     }
   }
+
   return state
 }
 
