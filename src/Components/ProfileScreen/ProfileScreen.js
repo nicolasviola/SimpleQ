@@ -8,6 +8,7 @@ import {
   Image,
   TouchableHighlight,
 } from 'react-native';
+import TextField from '../Shared/TextField'
 import css from './ProfileScreen.style'
 
 
@@ -16,22 +17,25 @@ export default class ProfileScreen extends Component {
     return (
       <View style={css.container} >
         <View style={css.formLabelContainer}>
-          <FormInput
+          <TextField
             inputStyle={css.inputStyle}
-            value= 'Nombre'
             clearTextOnFocus = {true}
+            placeholder="Nombre"
+            underlineColorAndroid="transparent"
           />
           {/* <FormValidationMessage>Error message</FormValidationMessage> */}
-          <FormInput
+          <TextField
             inputStyle={css.inputStyle}
-            value='Fecha de Nacimiento'
             clearTextOnFocus = {true}
+            placeholder="Apellido"
+            underlineColorAndroid="transparent"
           />
           {/* <FormValidationMessage>Error message</FormValidationMessage> */}
-          <FormInput
+          <TextField
             inputStyle={css.inputStyle}
-            value='Localidad'
             clearTextOnFocus = {true}
+            placeholder="Dirección"
+            underlineColorAndroid="transparent"
           />
           {/* <FormValidationMessage>Error message</FormValidationMessage> */}
         </View>

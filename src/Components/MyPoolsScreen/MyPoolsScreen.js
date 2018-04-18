@@ -26,6 +26,8 @@ export default class MyPoolsScreen extends Component {
 
   render() {
 
+    console.log(this.props);
+
     const polls = (
       this.props.pollList.map(pull => {
 
@@ -62,13 +64,13 @@ export default class MyPoolsScreen extends Component {
                 {pull.description}
               </Text>
             </View>
-            <View style={css.imageContainer} >
+            <TouchableHighlight style={css.imageContainer} >
               <Image
                 source = {imgPollType}
                 style = {css.img}
               >
               </Image>
-            </View>
+            </TouchableHighlight>
           </View>
 
         )

@@ -8,6 +8,7 @@ import {
   Image,
   TouchableHighlight,
 } from 'react-native';
+import TextField from '../Shared/TextField'
 import css from './CodeNumberScreen.style'
 
 
@@ -21,12 +22,12 @@ export default class CodeNumberScreen extends Component {
             a tu número, por favor ingrésalo a continuación:
           </Text>
           <View style={css.formLabelContainer}>
-            <FormInput
+            <TextField
               inputStyle={css.inputStyle}
-              value='Código de Verificación'
               clearTextOnFocus = {true}
+              placeholder="Código de verificación"
+              underlineColorAndroid="transparent"
             />
-            {/* <FormValidationMessage>Error message</FormValidationMessage> */}
           </View>
         </View>
         <View style={css.buttonContainer}>

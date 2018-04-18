@@ -13,15 +13,16 @@ export default StyleSheet.create({
   },
 
   formLabelContainer: {
-    width: '98%',
-    marginBottom: 20,
-    marginTop: 20,
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 
   inputStyle: {
     marginTop: 20,
-    color: 'white',
-    fontWeight: '700',
+    fontWeight: '300',
+    width: '90%',
+    marginLeft: '5%',
   },
 
   buttonContainer: {
@@ -38,5 +39,5 @@ export default StyleSheet.create({
   text: {
     fontSize: 20,
   },
-  
+
 })
