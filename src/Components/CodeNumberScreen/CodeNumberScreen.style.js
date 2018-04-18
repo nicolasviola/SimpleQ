@@ -21,14 +21,18 @@ export default StyleSheet.create({
   },
 
   formLabelContainer: {
-    width: '98%',
-    marginBottom: 20,
-    marginTop: 20,
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    // marginBottom: 20,
+    // marginTop: 20,
   },
 
   inputStyle: {
     marginTop: 20,
-    fontWeight: '700',
+    fontWeight: '300',
+    width: '90%',
+    marginLeft: '5%',
   },
 
   buttonContainer: {
@@ -48,5 +52,5 @@ export default StyleSheet.create({
     color: 'white',
     fontWeight: '700',
   },
-  
+
 })

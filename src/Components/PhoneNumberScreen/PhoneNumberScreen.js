@@ -8,6 +8,7 @@ import {
   Image,
   TouchableHighlight,
 } from 'react-native';
+import TextField from '../Shared/TextField'
 import css from './PhoneNumberScreen.style'
 
 
@@ -21,12 +22,12 @@ export default class PhoneNumberScreen extends Component {
             comenzar a usar SimpleQ!
           </Text>
           <View style={css.formLabelContainer}>
-            <FormInput
+            <TextField
               inputStyle={css.inputStyle}
-              value='Teléfono'
               clearTextOnFocus = {true}
+              placeholder="Teléfono"
+              underlineColorAndroid="transparent"
             />
-            {/* <FormValidationMessage>Error message</FormValidationMessage> */}
           </View>
         </View>
         <View style={css.buttonContainer}>

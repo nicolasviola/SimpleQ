@@ -1,1 +1,1 @@
-export const GET_POLLS = 'example/polls/GET_POLLS'
+export const GET_POLLS = 'SimpleQ/polls/GET_POLLS'
