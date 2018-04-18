@@ -12,7 +12,7 @@ import {
   View
 } from 'react-native';
 import { Provider } from 'react-redux'
-import Navigation from './Components/Navigation/Navigation.js'
+import Navigation from './Components/Navigation'
 import configureStore from './store'
 
 export default class App extends Component {

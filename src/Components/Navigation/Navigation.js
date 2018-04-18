@@ -1,4 +1,15 @@
-import React, { Component } from 'react';
+// import React, { Component } from 'react';
+
+// import Icon from 'react-native-vector-icons/Ionicons'
+// import ProfileScreen from '../ProfileScreen/ProfileScreen.js'
+// import PhoneNumberScreen from '../PhoneNumberScreen/PhoneNumberScreen.js'
+// import CodeNumberScreen from '../CodeNumberScreen/CodeNumberScreen.js'
+// import PrincipalScreen from './PrincipalScreen/PrincipalScreen.js'
+//
+
+
+
+import React from 'react';
 import {
   Platform,
   StyleSheet,
@@ -7,15 +18,24 @@ import {
   Image,
   View
 } from 'react-native';
-import { DrawerNavigator, StackNavigator } from 'react-navigation'
-import Icon from 'react-native-vector-icons/Ionicons'
+import {
+    StackNavigator,
+    DrawerNavigator,
+} from 'react-navigation';
+import { createReduxBoundAddListener } from 'react-navigation-redux-helpers';
+import { connect } from 'react-redux';
 import ProfileScreen from '../ProfileScreen/ProfileScreen.js'
 import PhoneNumberScreen from '../PhoneNumberScreen/PhoneNumberScreen.js'
 import CodeNumberScreen from '../CodeNumberScreen/CodeNumberScreen.js'
 import PrincipalScreen from './PrincipalScreen/PrincipalScreen.js'
 import css from './Navigation.style.js'
-
 import imgMenu from '../../../img/menu.png'
+
+
+
+
+// The Navigations that are set to default for all of the screens.
+
 
 const Started = StackNavigator({
   PhoneNumber: {

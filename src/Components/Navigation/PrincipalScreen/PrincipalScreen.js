@@ -18,24 +18,24 @@ import ContactsScreen from '../../ContactsScreen/ContactsScreen.js'
 export default class PrincipalScreen extends Component {
   render () {
     const MainTab = TabNavigator({
-      Encuestas: {
+      Polls: {
         screen: PollsScreen,
         navigationOptions: ({navigation}) => ({
-          topBarLabel: 'Encuestas',
+          title: 'Encuestas',
           headerTintColor: 'black',
         })
       },
-      'Mis Encuestas': {
+      MyPolls: {
         screen: MyPoolsScreen,
         navigationOptions: ({navigation}) => ({
-          topBarLabel: 'Mis Encuestas',
+          title: 'Mis Encuestas',
           headerTintColor: 'black',
         })
       },
-      Contactos: {
+      Contacts: {
         screen: ContactsScreen,
         navigationOptions: ({navigation}) => ({
-          topBarLabel: 'Contactos',
+          title: 'Contactos',
           headerTintColor: 'black',
         })
       },
