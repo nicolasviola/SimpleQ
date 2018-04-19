@@ -11,7 +11,7 @@ import css from './PollsScreen.style'
 class PollsScreen extends Component {
 
   static navigationOptions = ({navigation}) => ({
-    title: 'Encuestas',
+    title: 'ENCUESTAS',
     headerTitle: '',
   })
 

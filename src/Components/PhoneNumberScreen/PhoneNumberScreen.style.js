@@ -46,6 +46,8 @@ export default StyleSheet.create({
   inputStyle: {
     marginTop: 20,
     fontWeight: '300',
+    color: 'white',
+    fontSize: 18,
     width: '90%',
     marginLeft: '5%',
   },

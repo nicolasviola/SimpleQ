@@ -9,7 +9,7 @@ import {
 // Styles:
 import css from './TextField.style'
 
-class TextField extends PureComponent<Props> {
+class TextField extends PureComponent{
 
   render () {
 
@@ -21,6 +21,7 @@ class TextField extends PureComponent<Props> {
       containerStyle,
       placeholder,
       placeholderStyle,
+      placeholderTextColor,
       inputStyle,
       keyboardType,
       secureTextEntry,
@@ -30,6 +31,8 @@ class TextField extends PureComponent<Props> {
       //   warning,
       // },
     } = this.props
+
+    console.log(this.props);
 
     return (
 
@@ -48,9 +51,11 @@ class TextField extends PureComponent<Props> {
             multiline={multiline}
             // onBlur={input.onBlur}
             // onFocus={input.onFocus}
+            // placeholderStyle={placeholderStyle}
             placeholder={placeholder}
+            placeholderTextColor='#878787'
             // keyboardType={keyboardType || 'default'}
-            // underlineColorAndroid={'transparent'}
+            underlineColorAndroid={'transparent'}
             // onChangeText={value => {
             //
             //   input.onChange(value)
