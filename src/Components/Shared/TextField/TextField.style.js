@@ -3,12 +3,6 @@ import { StyleSheet } from 'react-native'
 
 export default StyleSheet.create({
 
-  placeholder: {
-    fontSize: 12,
-    fontWeight: '700',
-    color: 'black',
-  },
-
   textContainer: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -19,6 +13,8 @@ export default StyleSheet.create({
     fontSize: 18,
     width: '100%',
     color: 'white',
+    borderBottomWidth: 1,
+    borderBottomColor: '#878787',
   },
 
   // error: {

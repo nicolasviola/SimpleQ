@@ -27,14 +27,13 @@ const TabsScreen = TabNavigator({
   Contacts: {
     screen: ContactsScreen,
   },
-}, {
-  tabBarPosition: 'top',
-})
+}, vars.styleTabsScreen)
 
 const PrincipalScreen = StackNavigator({
   TabsScreen: {
     screen: TabsScreen,
-    navigationOptions: ({navigation}) => vars.principalNavigationOptions({navigation})
+    navigationOptions: ({navigation}) =>
+      vars.principalNavigationOptions({navigation})
   }
 })
 

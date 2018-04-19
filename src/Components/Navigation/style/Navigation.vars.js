@@ -46,6 +46,25 @@ const vars = {
     headerStyle: css.headerStyle,
   }),
 
+  styleTabsScreen: {
+    tabBarPosition: 'top',
+    tabBarOptions: {
+      activeTintColor: 'white',
+      inactiveTintColor: 'black',
+      indicatorStyle: {
+        opacity: 0
+      },
+      labelStyle: {
+        fontSize: 15,
+      },
+      style: {
+        backgroundColor: '#2E368B',
+        height: 50,
+        paddingBottom: 15,
+      },
+    }
+  }
+
 }
 
 export default vars

@@ -12,7 +12,7 @@ import css from './ContactsScreen.style'
 class ContactsScreen extends Component {
 
   static navigationOptions = ({navigation}) => ({
-    title: 'Contactos',
+    title: 'CONTACTOS',
     headerTitle: '',
   })
 

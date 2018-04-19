@@ -36,8 +36,8 @@ class PhoneNumberScreen extends Component {
             <TextField
               inputStyle={css.inputStyle}
               clearTextOnFocus = {true}
-              placeholder="Teléfono"
-              underlineColorAndroid="transparent"
+              placeholder = "Teléfono"
+              placeholderTextColor = 'white'
             />
           </View>
         </View>
