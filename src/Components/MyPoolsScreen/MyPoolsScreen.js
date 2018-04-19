@@ -1,24 +1,29 @@
-import React, { Component } from 'react';
-import { FormLabel, FormInput, FormValidationMessage, Button, TextInput } from 'react-native-elements'
+// Dependencies:
+import React, { Component } from 'react'
 import {
-  Platform,
-  StyleSheet,
   Text,
   View,
   Image,
   TouchableHighlight,
-} from 'react-native';
+} from 'react-native'
+
+// Style:
 import css from './MyPoolsScreen.style'
 
+// Assets:
 import imgBall from '../../../img/soccer-ball.png'
 import imgFriends from '../../../img/friends.png'
 import imgFood from '../../../img/food.png'
-
 import imgBooleanAnswer from '../../../img/booleanAnswer.png'
 import imgDateAnswer from '../../../img/calendar.png'
 import imgOptionsAnswer from '../../../img/left-arrow.png'
 
-export default class MyPoolsScreen extends Component {
+class MyPoolsScreen extends Component {
+
+  static navigationOptions = ({navigation}) => ({
+    title: 'Mis Encuestas',
+    headerTitle: '',
+  })
 
   componentWillMount(){
     this.props.getPolls()
@@ -26,9 +31,8 @@ export default class MyPoolsScreen extends Component {
 
   render() {
 
-    console.log(this.props);
-
     const polls = (
+
       this.props.pollList.map(pull => {
 
         let imgPollType = null
@@ -41,7 +45,6 @@ export default class MyPoolsScreen extends Component {
         if (pull.category === "football") imgPollCategory = imgBall
         else if (pull.category === "food") imgPollCategory = imgFood
         else if (pull.category === "group") imgPollCategory = imgFriends
-
 
         return (
 
@@ -80,9 +83,15 @@ export default class MyPoolsScreen extends Component {
     )
 
     return (
-      <View style={css.container} >
+
+      <View style={css.container}>
         {polls}
       </View>
-    );
+
+    )
+
   }
+
 }
+
+export default MyPoolsScreen

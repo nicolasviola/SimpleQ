@@ -1,34 +1,16 @@
+// Dependencies:
 import React, { PureComponent } from 'react'
 import {
   TextInput,
   View,
   Text,
-
 } from 'react-native'
-import css from './TextField.style'
 
-type Props = {
-  input: Object,
-  label: string,
-  multiline: boolean,
-  numberOfLines: number,
-  maxLength: number,
-  minLength: number,
-  textColor: string,
-  keyboardType: string,
-  secureTextEntry: boolean,
-  email: boolean,
-  meta: Object,
-  borderBottomWidth: number,
-  containerStyle: Object,
-  placeholder: string,
-  placeholderStyle: Object,
-  inputStyle: Object,
-}
+// Styles:
+import css from './TextField.style'
 
 class TextField extends PureComponent<Props> {
 
-  props: Props
   render () {
 
     const {
@@ -50,7 +32,8 @@ class TextField extends PureComponent<Props> {
     } = this.props
 
     return (
-      <View style={[css.container, containerStyle]}>
+
+      <View style={containerStyle}>
         <Text style={[css.placeholder, placeholderStyle]}>
           {label && label.toUpperCase()}
         </Text>
@@ -86,4 +69,5 @@ class TextField extends PureComponent<Props> {
   }
 
 }
+
 export default TextField

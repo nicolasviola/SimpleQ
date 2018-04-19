@@ -1,8 +1,17 @@
+// Dependencies:
 import { StyleSheet, Dimensions } from 'react-native'
 
-// const { height, width } = Dimensions.get('window')
-
 export default StyleSheet.create({
+
+  textTitle: {
+    fontSize: 20,
+    color: '#4C5380',
+    marginLeft: 20,
+  },
+
+  headerStyle: {
+    backgroundColor: '#C2CCD8',
+  },
 
   container: {
     flex: 1,
@@ -34,10 +43,6 @@ export default StyleSheet.create({
   buttonStyle: {
     width: '100%',
     borderRadius: 5,
-  },
-
-  text: {
-    fontSize: 20,
   },
 
 })

@@ -1,115 +1,85 @@
-import React, { Component } from 'react';
+// Dependencies:
+import React from 'react'
 import {
-  Platform,
-  StyleSheet,
-  Text,
-  TouchableHighlight,
-  Image,
-  View
-} from 'react-native';
-import { DrawerNavigator, StackNavigator } from 'react-navigation'
-import Icon from 'react-native-vector-icons/Ionicons'
-import ProfileScreen from '../ProfileScreen/ProfileScreen.js'
-import PhoneNumberScreen from '../PhoneNumberScreen/PhoneNumberScreen.js'
-import CodeNumberScreen from '../CodeNumberScreen/CodeNumberScreen.js'
-import PrincipalScreen from './PrincipalScreen/PrincipalScreen.js'
-import css from './Navigation.style.js'
+    StackNavigator,
+    DrawerNavigator,
+    TabNavigator
+} from 'react-navigation'
 
-import imgMenu from '../../../img/menu.png'
+// Style:
+import vars from './style/Navigation.vars'
 
-const Started = StackNavigator({
-  PhoneNumber: {
-    screen: PhoneNumberScreen,
-    navigationOptions: ({navigation}) => ({
-      headerBackTitle: null,
-      headerLeft: null,
-      headerTitle: 'Comencemos...',
-      headerTitleStyle: css.textTitle,
-      headerStyle: css.headerStyleNavOpt
-    })
+// Components:
+import ProfileScreen from '../ProfileScreen'
+import PhoneNumberScreen from '../PhoneNumberScreen'
+import CodeNumberScreen from '../CodeNumberScreen'
+import PollsScreen from '../PollsScreen'
+import MyPoolsScreen from '../MyPoolsScreen'
+import ContactsScreen from '../ContactsScreen'
+
+const TabsScreen = TabNavigator({
+  Polls: {
+    screen: PollsScreen,
   },
-  CodeNumber: {
-    screen: CodeNumberScreen,
-    navigationOptions: ({navigation}) => ({
-      headerTitle: 'Cód. de verif.',
-      headerTitleStyle: css.textTitle,
-      headerStyle: css.headerStyleNavOpt,
-    }),
+  MyPolls: {
+    screen: MyPoolsScreen,
   },
+  Contacts: {
+    screen: ContactsScreen,
+  },
+}, {
+  tabBarPosition: 'top',
 })
 
-const Principal = StackNavigator({
-  Principal: {
-    // screen: PrincipalScreen,
-    screen: ({ navigation }) => <PrincipalScreen
-      screenProps ={{ rootNavigation: navigation
-      }}
-    />,
-    navigationOptions: ({navigation}) => ({
-      // title: "SimpleQ",
-      headerBackTitle: null,
-      headerLeft: <View style={css.container}>
-                    <TouchableHighlight
-                      onPress={ () => navigation.navigate('DrawerOpen')}
-                    >
-                      <Image
-                        source = {imgMenu}
-                      />
-                    </TouchableHighlight>
-                    <Text style={css.textTitlePrincipal}>
-                      SimpleQ
-                    </Text>
-                  </View>,
-      headerStyle: css.headerStyleStNav,
-    })
-  },
-})
-
-const Profile = StackNavigator({
-  Profile: {
-    screen: ProfileScreen,
-    navigationOptions: ({navigation}) => ({
-      headerLeft: <Text style={css.textTitle}>
-        Perfil del usuario
-      </Text>,
-      headerStyle: css.headerStyleNavOpt,
-    }),
+const PrincipalScreen = StackNavigator({
+  TabsScreen: {
+    screen: TabsScreen,
+    navigationOptions: ({navigation}) => vars.principalNavigationOptions({navigation})
   }
 })
 
-const MainMenu = DrawerNavigator({
-  Encuestas: {
-    screen: Principal,
-  },
-  Perfil: {
-    screen: Profile,
-  },
-}, {
-  drawerBackgroundColor: '#4A525C',
-  contentOptions:{
-    labelStyle: css.labelStyleMainMenu,
-    activeBackgroundColor: '#2E368B',
-  },
-
-  drawerPosition: 'left',
-  drawerWidth: 300,
+const Profile = StackNavigator({
+  ProfileScreen: {
+    screen: ProfileScreen
+  }
 })
 
-const Navigation = DrawerNavigator({
-  Started: {
-    screen: Started,
+const MainScreen = DrawerNavigator({
+  PrincipalScreen: {
+      screen: PrincipalScreen,
   },
-  MainMenu: {
-    screen: MainMenu,
+  ProfileScreen: {
+      screen: Profile,
   },
-}, {
-  contentOptions:{
-    labelStyle: css.labelStyleNavigation,
-    activeBackgroundColor: 'red',
-  },
+}, vars.styleMainScreen)
 
-  drawerPosition: 'left',
-  drawerWidth: 300,
+const Started = StackNavigator({
+  PhoneNumberScreen: {
+      screen: PhoneNumberScreen,
+  },
+  CodeNumberScreen: {
+      screen: CodeNumberScreen,
+  },
+})
+
+const appStack = {
+  Started:{
+    screen: Started,
+    navigationOptions: vars.defaultNavigationOptions()
+  },
+  MainScreen: {
+    screen: MainScreen,
+  }
+}
+
+const Navigation = DrawerNavigator({
+    ...appStack,
+}, {
+    headerMode: 'screen',
+    initialRouteName: 'Started',
+    navigationOptions: {
+      drawerLockMode: 'locked-closed'
+    }
 })
 
 export default Navigation

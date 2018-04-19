@@ -1,4 +1,7 @@
+// initialState:
 import initialState from './initialState'
+
+// Const:
 import {
   GET_POLLS,
 } from './const'

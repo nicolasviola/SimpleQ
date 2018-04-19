@@ -1,11 +1,21 @@
+// Dependencies:
 import { createStore, applyMiddleware } from 'redux'
-import rootReducer from './redux/modules'
 import thunk from 'redux-thunk'
-import promiseMiddleware from "redux-promise-middleware";
+import promiseMiddleware from "redux-promise-middleware"
+import { createReactNavigationReduxMiddleware } from 'react-navigation-redux-helpers'
+
+// Components:
+import rootReducer from './redux/modules'
+
+const reduxNavigationMiddleware = createReactNavigationReduxMiddleware(
+   'root',
+   state => state.nav
+)
 
 const middleware = [
   thunk,
-  promiseMiddleware()
+  promiseMiddleware(),
+  reduxNavigationMiddleware
 ]
 
 const logger = store => next => action => {

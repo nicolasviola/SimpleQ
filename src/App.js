@@ -4,23 +4,26 @@
  * @flow
  */
 
-import React, { Component } from 'react';
-import {
-  Platform,
-  StyleSheet,
-  Text,
-  View
-} from 'react-native';
+// Dependencies:
+import React, { Component } from 'react'
 import { Provider } from 'react-redux'
-import Navigation from './Components/Navigation/Navigation.js'
+
+// Components:
+import Navigation from './Components/Navigation'
 import configureStore from './store'
 
 export default class App extends Component {
+
   render() {
+
     return (
+
       <Provider store={configureStore}>
         <Navigation />
       </Provider>
-    );
+      
+    )
+
   }
+
 }
