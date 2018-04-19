@@ -1,20 +1,30 @@
-import React, { Component } from 'react';
-import { FormLabel, FormInput, FormValidationMessage, Button, TextInput } from 'react-native-elements'
+// Dependencies:
+import React, { Component } from 'react'
+import { Button } from 'react-native-elements'
 import {
-  Platform,
-  StyleSheet,
   Text,
   View,
-  Image,
-  TouchableHighlight,
-} from 'react-native';
-import TextField from '../Shared/TextField'
+} from 'react-native'
+
+// Style:
 import css from './CodeNumberScreen.style'
 
+// Components:
+import TextField from '../Shared/TextField'
 
-export default class CodeNumberScreen extends Component {
+
+class CodeNumberScreen extends Component {
+
+  static navigationOptions = ({navigation}) => ({
+    headerTitle: 'Cód. de verif.',
+    headerTitleStyle: css.textTitle,
+    headerStyle: css.headerStyleNavOpt,
+  })
+
   render() {
+
     return (
+
       <View style={css.container} >
         <View style={css.flexContainer}>
           <Text style={css.textDescription}>
@@ -32,13 +42,18 @@ export default class CodeNumberScreen extends Component {
         </View>
         <View style={css.buttonContainer}>
           <Button
-            onPress={() => this.props.navigation.navigate('Profile')}
+            onPress={() => this.props.openProfileScreen()}
             title='LOG IN'
             backgroundColor='#4A525D'
             buttonStyle={css.buttonStyle}
           />
         </View>
       </View>
-    );
+
+    )
+
   }
+
 }
+
+export default CodeNumberScreen

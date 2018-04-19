@@ -1,8 +1,17 @@
+// Dependencies:
 import { StyleSheet, Dimensions } from 'react-native'
 
-// const { height, width } = Dimensions.get('window')
-
 export default StyleSheet.create({
+
+  textTitle: {
+    fontSize: 20,
+    color: '#4C5380',
+    marginLeft: 20,
+  },
+
+  headerStyleNavOpt: {
+    backgroundColor: '#C2CCD8',
+  },
 
   container: {
     flex: 1,
@@ -20,12 +29,17 @@ export default StyleSheet.create({
     alignItems: 'center',
   },
 
+  textDescription: {
+    width: '80%',
+    fontSize: 20,
+    color: 'white',
+    fontWeight: '700',
+  },
+
   formLabelContainer: {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    // marginBottom: 20,
-    // marginTop: 20,
   },
 
   inputStyle: {
@@ -44,13 +58,6 @@ export default StyleSheet.create({
   buttonStyle: {
     width: '100%',
     borderRadius: 5,
-  },
-
-  textDescription: {
-    width: '80%',
-    fontSize: 20,
-    color: 'white',
-    fontWeight: '700',
   },
 
 })

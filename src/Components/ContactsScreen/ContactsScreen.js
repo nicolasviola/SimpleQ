@@ -1,25 +1,34 @@
-import React, { Component } from 'react';
-import { FormLabel, FormInput, FormValidationMessage, Button, TextInput } from 'react-native-elements'
+// Dependencies:
+import React, { Component } from 'react'
+// import { Button } from 'react-native-elements'
 import {
-  Platform,
-  StyleSheet,
   Text,
   View,
-  Image,
-  TouchableHighlight,
-} from 'react-native';
-import css from './ContactsScreen.style'
-import imgBall from '../../../img/soccer-ball.png'
-import imgBooleanAnswer from '../../../img/booleanAnswer.png'
+} from 'react-native'
 
-export default class ContactsScreen extends Component {
+// Style:
+import css from './ContactsScreen.style'
+
+class ContactsScreen extends Component {
+
+  static navigationOptions = ({navigation}) => ({
+    title: 'Contactos',
+    headerTitle: '',
+  })
+
   render() {
+
     return (
+
       <View style={css.container} >
         <Text>
           CONTACTOS
         </Text>
       </View>
-    );
+    )
+
   }
+
 }
+
+export default ContactsScreen

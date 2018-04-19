@@ -1,3 +1,4 @@
+// initialState:
 const initialState = {
   pollList: [],
 }

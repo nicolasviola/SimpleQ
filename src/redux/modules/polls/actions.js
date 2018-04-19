@@ -1,5 +1,7 @@
+// Api:
 import getPollsAPI from '../../../helpers/api/polls'
 
+// Const:
 import {
   GET_POLLS,
 } from './const'

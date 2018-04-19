@@ -1,6 +1,11 @@
+// Dependencies:
 import { connect } from 'react-redux'
-import {bindActionCreators} from 'redux';
+import {bindActionCreators} from 'redux'
+
+// Components:
 import MyPoolsScreen from './MyPoolsScreen'
+
+// Actions:
 import { getPolls } from '../../redux/modules/polls/actions'
 
 const mapStateToProps = (state) => {
@@ -13,4 +18,4 @@ const mapDispatchToProps = (dispatch) => ({
   getPolls: bindActionCreators(getPolls, dispatch),
 })
 
-export default connect(mapStateToProps, mapDispatchToProps) (MyPoolsScreen);
+export default connect(mapStateToProps, mapDispatchToProps) (MyPoolsScreen)

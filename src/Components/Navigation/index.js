@@ -1,11 +1,13 @@
-import React from 'react';
+// Dependencies:
+import React from 'react'
 import {
     addNavigationHelpers,
-} from 'react-navigation';
-import Navigation from './Navigation'
-import { createReduxBoundAddListener } from 'react-navigation-redux-helpers';
-import { connect } from 'react-redux';
+} from 'react-navigation'
+import { createReduxBoundAddListener } from 'react-navigation-redux-helpers'
+import { connect } from 'react-redux'
 
+// Components:
+import Navigation from './Navigation'
 
 class AppNavigation extends React.Component {
     // componentWillMount() {
@@ -16,7 +18,8 @@ class AppNavigation extends React.Component {
     // }
 
     render() {
-        const addListener = createReduxBoundAddListener('root');
+
+        const addListener = createReduxBoundAddListener('root')
         return (
             <Navigation
                 navigation={addNavigationHelpers({
@@ -25,19 +28,21 @@ class AppNavigation extends React.Component {
                     addListener,
                 })}
             />
-        );
+        )
+
     }
+
 }
 
 const mapStateToProps = state => ({
     nav: state.nav,
     // token: state.user.token,
     // sessionTokenChecked: state.user.sessionTokenChecked,
-});
+})
 
 const mapDispatchToProps = dispatch => ({
     // getLoginInfoFromAsyncStorage: () => dispatch(getLoginInfoFromAsyncStorage()),
     dispatch,
-});
+})
 
-export default connect(mapStateToProps, mapDispatchToProps)(AppNavigation);
+export default connect(mapStateToProps, mapDispatchToProps)(AppNavigation)

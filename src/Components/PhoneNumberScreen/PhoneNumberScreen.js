@@ -1,20 +1,31 @@
-import React, { Component } from 'react';
-import { FormLabel, FormInput, FormValidationMessage, Button, TextInput } from 'react-native-elements'
+// Dependencies:
+import React, { Component } from 'react'
+import { Button } from 'react-native-elements'
 import {
-  Platform,
-  StyleSheet,
   Text,
   View,
-  Image,
-  TouchableHighlight,
-} from 'react-native';
-import TextField from '../Shared/TextField'
+} from 'react-native'
+
+// Style:
 import css from './PhoneNumberScreen.style'
 
+// Components:
+import TextField from '../Shared/TextField'
 
-export default class PhoneNumberScreen extends Component {
+class PhoneNumberScreen extends Component {
+
+  static navigationOptions = ({navigation}) => ({
+    headerBackTitle: null,
+    headerLeft: null,
+    headerTitle: 'Comencemos...',
+    headerTitleStyle: css.textTitle,
+    headerStyle: css.headerStyle
+  })
+
   render() {
+
     return (
+
       <View style={css.container} >
         <View style={css.flexContainer}>
           <Text style={css.textDescription}>
@@ -32,14 +43,18 @@ export default class PhoneNumberScreen extends Component {
         </View>
         <View style={css.buttonContainer}>
           <Button
-            onPress={() => this.props.navigation.navigate('CodeNumber')}
+            onPress={() => this.props.openCodeNumberScreen()}
             title='CONTINUAR'
             backgroundColor='#4A525D'
             buttonStyle={css.buttonStyle}
           />
         </View>
-
       </View>
-    );
+
+    )
+
   }
+
 }
+
+export default PhoneNumberScreen

@@ -1,20 +1,33 @@
-import React, { Component } from 'react';
-import { FormLabel, FormInput, FormValidationMessage, Button, TextInput } from 'react-native-elements'
+// Dependencies:
+import React, { Component } from 'react'
+import { Button } from 'react-native-elements'
 import {
-  Platform,
-  StyleSheet,
   Text,
   View,
-  Image,
-  TouchableHighlight,
-} from 'react-native';
-import TextField from '../Shared/TextField'
+} from 'react-native'
+
+// Style:
 import css from './ProfileScreen.style'
 
+// Components
+import TextField from '../Shared/TextField'
 
-export default class ProfileScreen extends Component {
+
+class ProfileScreen extends Component {
+
+  static navigationOptions = ({navigation}) => ({
+    headerLeft: <Text style={css.textTitle}>
+      Perfil del usuario
+    </Text>,
+    headerStyle: css.headerStyle,
+    title: 'Perfil',
+    headerTitle: '',
+  })
+
   render() {
+
     return (
+
       <View style={css.container} >
         <View style={css.formLabelContainer}>
           <TextField
@@ -41,14 +54,18 @@ export default class ProfileScreen extends Component {
         </View>
         <View style={css.buttonContainer}>
           <Button
-            onPress={() => this.props.navigation.navigate('Principal')}
+            onPress={() => this.props.openPrincipalScreen()}
             title='GUARDAR'
             backgroundColor='#4A525D'
             buttonStyle={css.buttonStyle}
           />
         </View>
-
       </View>
-    );
+
+    )
+
   }
+
 }
+
+export default ProfileScreen

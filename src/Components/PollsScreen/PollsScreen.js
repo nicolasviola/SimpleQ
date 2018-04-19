@@ -1,24 +1,34 @@
-import React, { Component } from 'react';
-import { FormLabel, FormInput, FormValidationMessage, Button, TextInput } from 'react-native-elements'
+// Dependencies:
+import React, { Component } from 'react'
 import {
-  Platform,
-  StyleSheet,
   Text,
-  View,
-  Image,
-  TouchableHighlight,
-} from 'react-native';
+  View
+} from 'react-native'
+
+// Styles:
 import css from './PollsScreen.style'
 
+class PollsScreen extends Component {
 
-export default class PollsScreen extends Component {
+  static navigationOptions = ({navigation}) => ({
+    title: 'Encuestas',
+    headerTitle: '',
+  })
+
   render() {
+
     return (
-      <View style={css.container} >
+
+      <View style={css.container}>
         <Text>
           ENCUESTAS
         </Text>
       </View>
-    );
+
+    )
+
   }
+
 }
+
+export default PollsScreen

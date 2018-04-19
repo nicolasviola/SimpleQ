@@ -1,4 +1,7 @@
+// Dependencies:
 import { connect } from 'react-redux'
+
+// Components:
 import TextField from './TextField'
 
 
