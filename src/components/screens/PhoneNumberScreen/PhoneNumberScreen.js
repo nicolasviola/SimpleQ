@@ -10,7 +10,7 @@ import {
 import css from './PhoneNumberScreen.style'
 
 // Components:
-import TextField from '../Shared/TextField'
+import TextField from '../../shared/TextField'
 
 class PhoneNumberScreen extends Component {
 

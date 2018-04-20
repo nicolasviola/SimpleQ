@@ -4,7 +4,7 @@ import {bindActionCreators} from 'redux';
 import CodeNumberScreen from './CodeNumberScreen'
 
 // Actions:
-import { openProfileScreen } from '../../redux/modules/navigation/actions'
+import { openProfileScreen } from '../../../redux/modules/navigation/actions'
 
 const mapStateToProps = (state) => {
   return {

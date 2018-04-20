@@ -1,5 +1,4 @@
 // Dependencies:
-import React from 'react'
 import {
     StackNavigator,
     DrawerNavigator,
@@ -7,15 +6,15 @@ import {
 } from 'react-navigation'
 
 // Style:
-import vars from './style/Navigation.vars'
+import vars from './config/Navigation.vars'
 
 // Components:
-import ProfileScreen from '../ProfileScreen'
-import PhoneNumberScreen from '../PhoneNumberScreen'
-import CodeNumberScreen from '../CodeNumberScreen'
-import PollsScreen from '../PollsScreen'
-import MyPoolsScreen from '../MyPoolsScreen'
-import ContactsScreen from '../ContactsScreen'
+import ProfileScreen from '../components/screens/ProfileScreen'
+import PhoneNumberScreen from '../components/screens/PhoneNumberScreen'
+import CodeNumberScreen from '../components/screens/CodeNumberScreen'
+import PollsScreen from '../components/screens/PollsScreen'
+import MyPoolsScreen from '../components/screens/MyPoolsScreen'
+import ContactsScreen from '../components/screens/ContactsScreen'
 
 const TabsScreen = TabNavigator({
   Polls: {
