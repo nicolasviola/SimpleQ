@@ -6,7 +6,7 @@ import {
 } from 'react-navigation'
 
 // Style:
-import vars from './config/Navigation.vars'
+import vars from './navigation.vars'
 
 // Components:
 import ProfileScreen from '../components/screens/ProfileScreen'
@@ -44,11 +44,14 @@ const Profile = StackNavigator({
 
 const MainScreen = DrawerNavigator({
   PrincipalScreen: {
-      screen: PrincipalScreen,
+    screen: PrincipalScreen,
   },
   ProfileScreen: {
-      screen: Profile,
+    screen: Profile,
   },
+  SignOut: {
+    screen: PhoneNumberScreen,
+  }
 }, vars.styleMainScreen)
 
 const Started = StackNavigator({

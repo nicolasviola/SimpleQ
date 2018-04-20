@@ -15,11 +15,13 @@ import TextField from '../../shared/TextField'
 class PhoneNumberScreen extends Component {
 
   static navigationOptions = ({navigation}) => ({
-    headerBackTitle: null,
-    headerLeft: null,
-    headerTitle: 'Comencemos...',
-    headerTitleStyle: css.textTitle,
-    headerStyle: css.headerStyle
+    // headerBackTitle: null,
+    drawerLockMode: 'locked-closed',
+    // headerLeft: null,
+    // headerTitle: 'Comencemos...',
+    header: null,
+    // headerTitleStyle: css.textTitle,
+    // headerStyle: css.headerStyle,
   })
 
   render() {

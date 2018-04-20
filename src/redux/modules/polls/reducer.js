@@ -8,14 +8,19 @@ import {
 
 const reducer = (state = initialState, action) => {
 
-  if (action.type === `${GET_POLLS}_FULFILLED`) {
-    return {
-      ...state,
-      pollList: action.payload.data,
-    }
+  switch (action.type) {
+
+    case `${GET_POLLS}_FULFILLED`:
+      return {
+        ...state,
+        pollList: action.payload.data,
+      }
+
+    default:
+      return state
+
   }
 
-  return state
 }
 
 export default reducer

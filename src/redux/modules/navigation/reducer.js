@@ -1,7 +1,7 @@
 // Dependencies:
-import { NavigationActions } from 'react-navigation'
+import { navigateToScreen, stayInScreen } from './actions'
 
-// Components:
+// Navigation:
 import Navigation from '../../../navigation'
 
 // Const:
@@ -12,45 +12,23 @@ import {
     OPEN_PRINCIPAL_SCREEN
 } from './const'
 
-/* Returns the next state after navigating to a specific screen in the app,
-which is then returned in the reducer */
-const navigateToScreen =
-  (routeName, params, state) => {
-    const newInfo = Navigation.router.getStateForAction(
-      NavigationActions.navigate({
-        params,
-        routeName,
-      }),
-      state
-    )
-    return newInfo
-  }
-
 const navReducer = (state, action) => {
-    let nextState
-    switch (action.type) {
+  switch (action.type) {
     case OPEN_CODE_NUMBER_SCREEN:
-        nextState = navigateToScreen('CodeNumberScreen', {}, state)
-        break
+      return navigateToScreen('CodeNumberScreen', {}, state)
 
     case OPEN_PHONE_NUMBER_SCREEN:
-        nextState = navigateToScreen('PhoneNumberScreen', {}, state)
-        break
+      return navigateToScreen('PhoneNumberScreen', {}, state)
 
     case OPEN_PROFILE_SCREEN:
-        nextState = navigateToScreen('ProfileScreen', {}, state)
-        break
+      return navigateToScreen('ProfileScreen', {}, state)
 
     case OPEN_PRINCIPAL_SCREEN:
-        nextState = navigateToScreen('TabsScreen', {}, state)
-        break
+      return navigateToScreen('TabsScreen', {}, state)
 
     default:
-        nextState = Navigation.router.getStateForAction(action, state)
-        break
-    }
-
-    return nextState || state
+      return Navigation.router.getStateForAction(action, state)
+  }
 }
 
 export default navReducer

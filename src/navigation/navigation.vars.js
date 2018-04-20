@@ -2,7 +2,7 @@
 import React from 'react'
 
 // Components:
-import IconMenu from '../../components/shared/IconMenu'
+import IconMenu from '../components/shared/IconMenu'
 
 // object created to save navigation style compositions
 const vars = {
