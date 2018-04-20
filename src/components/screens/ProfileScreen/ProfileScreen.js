@@ -10,7 +10,7 @@ import {
 import css from './ProfileScreen.style'
 
 // Components
-import TextField from '../Shared/TextField'
+import TextField from '../../shared/TextField'
 
 
 class ProfileScreen extends Component {
@@ -20,7 +20,7 @@ class ProfileScreen extends Component {
       Perfil del usuario
     </Text>,
     headerStyle: css.headerStyle,
-    title: 'Perfil',
+    title: 'PERFIL',
     headerTitle: '',
   })
 

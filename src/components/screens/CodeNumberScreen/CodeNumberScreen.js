@@ -10,7 +10,7 @@ import {
 import css from './CodeNumberScreen.style'
 
 // Components:
-import TextField from '../Shared/TextField'
+import TextField from '../../shared/TextField'
 
 
 class CodeNumberScreen extends Component {

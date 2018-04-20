@@ -2,7 +2,7 @@
 import { NavigationActions } from 'react-navigation'
 
 // Components:
-import Navigation from '../../../Components/Navigation/Navigation'
+import Navigation from '../../../navigation'
 
 // Const:
 import {

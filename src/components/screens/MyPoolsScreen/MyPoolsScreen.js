@@ -11,12 +11,12 @@ import {
 import css from './MyPoolsScreen.style'
 
 // Assets:
-import imgBall from '../../../img/soccer-ball.png'
-import imgFriends from '../../../img/friends.png'
-import imgFood from '../../../img/food.png'
-import imgBooleanAnswer from '../../../img/booleanAnswer.png'
-import imgDateAnswer from '../../../img/calendar.png'
-import imgOptionsAnswer from '../../../img/left-arrow.png'
+import imgBall from '../../../../img/soccer-ball.png'
+import imgFriends from '../../../../img/friends.png'
+import imgFood from '../../../../img/food.png'
+import imgBooleanAnswer from '../../../../img/booleanAnswer.png'
+import imgDateAnswer from '../../../../img/calendar.png'
+import imgOptionsAnswer from '../../../../img/left-arrow.png'
 
 class MyPoolsScreen extends Component {
 

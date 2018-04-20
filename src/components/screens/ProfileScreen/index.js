@@ -6,7 +6,7 @@ import {bindActionCreators} from 'redux'
 import ProfileScreen from './ProfileScreen'
 
 //Actions:
-import { openPrincipalScreen } from '../../redux/modules/navigation/actions'
+import { openPrincipalScreen } from '../../../redux/modules/navigation/actions'
 
 const mapStateToProps = (state) => {
   return {

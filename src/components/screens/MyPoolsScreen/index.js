@@ -6,7 +6,7 @@ import {bindActionCreators} from 'redux'
 import MyPoolsScreen from './MyPoolsScreen'
 
 // Actions:
-import { getPolls } from '../../redux/modules/polls/actions'
+import { getPolls } from '../../../redux/modules/polls/actions'
 
 const mapStateToProps = (state) => {
   return {

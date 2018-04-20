@@ -1,17 +1,8 @@
 // Dependencies:
 import React from 'react'
-import {
-  Text,
-  TouchableHighlight,
-  Image,
-  View
-} from 'react-native'
 
-// Style:
-import css from './Navigation.style'
-
-// Assets:
-import imgMenu from '../../../../img/menu.png'
+// Components:
+import IconMenu from '../../components/shared/IconMenu'
 
 // object created to save navigation style compositions
 const vars = {
@@ -19,7 +10,12 @@ const vars = {
   styleMainScreen: {
     drawerBackgroundColor: '#4A525C',
     contentOptions:{
-      labelStyle: css.labelStyleMainMenu,
+      labelStyle: {
+        fontSize: 16,
+        color: 'white',
+        display: 'flex',
+        justifyContent: 'center',
+      },
       activeBackgroundColor: '#2E368B',
     },
     drawerPosition: 'left',
@@ -31,19 +27,15 @@ const vars = {
   }),
 
   principalNavigationOptions: ({navigation}) => ({
-    headerLeft: <View style={css.container}>
-                  <TouchableHighlight
-                    onPress={ () => navigation.navigate('DrawerOpen')}
-                  >
-                    <Image
-                      source = {imgMenu}
-                    />
-                  </TouchableHighlight>
-                  <Text style={css.textTitle}>
-                    SimpleQ
-                  </Text>
-                </View>,
-    headerStyle: css.headerStyle,
+    headerLeft: <IconMenu onPress={ () => navigation.navigate('DrawerOpen')}/>,
+    headerTitle: 'SimpleQ',
+    headerTitleStyle: {
+      color: 'white',
+      fontSize: 20,
+    },
+    headerStyle: {
+      backgroundColor: '#2E368B',
+    },
   }),
 
   styleTabsScreen: {

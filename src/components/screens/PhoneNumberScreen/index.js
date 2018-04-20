@@ -6,7 +6,7 @@ import {bindActionCreators} from 'redux'
 import PhoneNumberScreen from './PhoneNumberScreen'
 
 // Actions:
-import { openCodeNumberScreen } from '../../redux/modules/navigation/actions'
+import { openCodeNumberScreen } from '../../../redux/modules/navigation/actions'
 
 const mapStateToProps = (state) => {
   return {
