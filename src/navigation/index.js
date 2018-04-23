@@ -8,13 +8,14 @@ import {
 // Style:
 import vars from './navigation.vars'
 
-// Components:
+// Screens:
 import ProfileScreen from '../components/screens/ProfileScreen'
 import PhoneNumberScreen from '../components/screens/PhoneNumberScreen'
 import CodeNumberScreen from '../components/screens/CodeNumberScreen'
 import PollsScreen from '../components/screens/PollsScreen'
 import MyPoolsScreen from '../components/screens/MyPoolsScreen'
 import ContactsScreen from '../components/screens/ContactsScreen'
+import Login from '../components/layouts/Login'
 
 const TabsScreen = TabNavigator({
   Polls: {
@@ -51,6 +52,8 @@ const MainScreen = DrawerNavigator({
   },
   SignOut: {
     screen: PhoneNumberScreen,
+    navigationOptions: ({navigation}) =>
+      vars.signOutNavigationOptions({navigation}),
   }
 }, vars.styleMainScreen)
 
@@ -70,7 +73,7 @@ const appStack = {
   },
   MainScreen: {
     screen: MainScreen,
-  }
+  },
 }
 
 const Navigation = DrawerNavigator({

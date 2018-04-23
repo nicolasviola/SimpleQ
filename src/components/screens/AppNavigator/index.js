@@ -1,9 +1,5 @@
 // Dependencies:
 import React from 'react'
-import {
-    addNavigationHelpers,
-} from 'react-navigation'
-import { createReduxBoundAddListener } from 'react-navigation-redux-helpers'
 import { connect } from 'react-redux'
 
 // Components:

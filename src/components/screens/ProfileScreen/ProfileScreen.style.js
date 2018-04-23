@@ -3,18 +3,9 @@ import { StyleSheet, Dimensions } from 'react-native'
 
 export default StyleSheet.create({
 
-  textTitle: {
-    fontSize: 20,
-    color: '#4C5380',
-    marginLeft: 20,
-  },
-
-  headerStyle: {
-    backgroundColor: '#C2CCD8',
-  },
-
   container: {
-    flex: 1,
+    height: '100%',
+    width: '100%',
     display: 'flex',
     justifyContent: 'space-around',
     alignItems: 'center',
@@ -22,6 +13,7 @@ export default StyleSheet.create({
   },
 
   formLabelContainer: {
+    height: '40%',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
@@ -35,6 +27,7 @@ export default StyleSheet.create({
   },
 
   buttonContainer: {
+    height: '20%',
     width: '98%',
     paddingLeft: '1%',
     paddingRight: '1%',
