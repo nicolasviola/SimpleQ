@@ -38,6 +38,11 @@ const vars = {
     },
   }),
 
+  signOutNavigationOptions: ({navigation}) => ({
+    header: null,
+    title: 'Sign Out',
+  }),
+
   styleTabsScreen: {
     tabBarPosition: 'top',
     tabBarOptions: {

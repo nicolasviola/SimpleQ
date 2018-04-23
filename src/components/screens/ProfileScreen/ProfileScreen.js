@@ -10,57 +10,59 @@ import {
 import css from './ProfileScreen.style'
 
 // Components
+import Login from '../../layouts/Login/'
 import TextField from '../../shared/TextField'
 
 
 class ProfileScreen extends Component {
 
   static navigationOptions = ({navigation}) => ({
-    headerLeft: <Text style={css.textTitle}>
-      Perfil del usuario
-    </Text>,
-    headerStyle: css.headerStyle,
-    title: 'PERFIL',
-    headerTitle: '',
+    // drawerLockMode: 'locked-closed',
+    header: null,
+    title: 'Perfil',
   })
 
   render() {
 
     return (
 
-      <View style={css.container} >
-        <View style={css.formLabelContainer}>
-          <TextField
-            inputStyle={css.inputStyle}
-            clearTextOnFocus = {true}
-            placeholder="Nombre"
-            underlineColorAndroid="transparent"
-          />
-          {/* <FormValidationMessage>Error message</FormValidationMessage> */}
-          <TextField
-            inputStyle={css.inputStyle}
-            clearTextOnFocus = {true}
-            placeholder="Apellido"
-            underlineColorAndroid="transparent"
-          />
-          {/* <FormValidationMessage>Error message</FormValidationMessage> */}
-          <TextField
-            inputStyle={css.inputStyle}
-            clearTextOnFocus = {true}
-            placeholder="Dirección"
-            underlineColorAndroid="transparent"
-          />
-          {/* <FormValidationMessage>Error message</FormValidationMessage> */}
+      <Login
+        title = 'Perfil del Usuario'
+      >
+        <View style={css.container} >
+          <View style={css.formLabelContainer}>
+            <TextField
+              inputStyle={css.inputStyle}
+              clearTextOnFocus = {true}
+              placeholder="Nombre"
+              underlineColorAndroid="transparent"
+            />
+            {/* <FormValidationMessage>Error message</FormValidationMessage> */}
+            <TextField
+              inputStyle={css.inputStyle}
+              clearTextOnFocus = {true}
+              placeholder="Apellido"
+              underlineColorAndroid="transparent"
+            />
+            {/* <FormValidationMessage>Error message</FormValidationMessage> */}
+            <TextField
+              inputStyle={css.inputStyle}
+              clearTextOnFocus = {true}
+              placeholder="Dirección"
+              underlineColorAndroid="transparent"
+            />
+            {/* <FormValidationMessage>Error message</FormValidationMessage> */}
+          </View>
+          <View style={css.buttonContainer}>
+            <Button
+              onPress={() => this.props.openPrincipalScreen()}
+              title='GUARDAR'
+              backgroundColor='#4A525D'
+              buttonStyle={css.buttonStyle}
+            />
+          </View>
         </View>
-        <View style={css.buttonContainer}>
-          <Button
-            onPress={() => this.props.openPrincipalScreen()}
-            title='GUARDAR'
-            backgroundColor='#4A525D'
-            buttonStyle={css.buttonStyle}
-          />
-        </View>
-      </View>
+      </Login>
 
     )
 

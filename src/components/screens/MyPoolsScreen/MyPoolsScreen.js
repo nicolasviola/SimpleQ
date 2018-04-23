@@ -21,7 +21,7 @@ import imgOptionsAnswer from '../../../../img/left-arrow.png'
 class MyPoolsScreen extends Component {
 
   static navigationOptions = ({navigation}) => ({
-    title: 'PROPIAS',
+    title: 'Propias',
     headerTitle: '',
   })
 

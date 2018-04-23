@@ -1,21 +1,11 @@
+// Dependencies:
 import { StyleSheet, Dimensions } from 'react-native'
-
-// const { height, width } = Dimensions.get('window')
 
 export default StyleSheet.create({
 
-  textTitle: {
-    fontSize: 20,
-    color: '#4C5380',
-    marginLeft: 20,
-  },
-
-  headerStyle: {
-    backgroundColor: '#C2CCD8',
-  },
-
   container: {
-    flex: 1,
+    height: '100%',
+    width: '100%',
     display: 'flex',
     justifyContent: 'space-around',
     alignItems: 'center',
@@ -23,7 +13,7 @@ export default StyleSheet.create({
   },
 
   flexContainer: {
-    height: '35%',
+    height: '40%',
     width: '100%',
     display: 'flex',
     justifyContent: 'space-between',
@@ -53,6 +43,7 @@ export default StyleSheet.create({
   },
 
   buttonContainer: {
+    height: '20%',
     width: '98%',
     paddingLeft: '1%',
     paddingRight: '1%',
