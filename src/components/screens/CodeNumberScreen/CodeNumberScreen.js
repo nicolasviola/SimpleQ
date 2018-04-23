@@ -16,12 +16,15 @@ import TextField from '../../shared/TextField'
 class CodeNumberScreen extends Component {
 
   static navigationOptions = ({navigation}) => ({
-    headerTitle: 'Cód. de verif.',
-    headerTitleStyle: css.textTitle,
-    headerStyle: css.headerStyleNavOpt,
+    header: null,
+    // headerTitle: 'Cód. de verif.',
+    // headerTitleStyle: css.textTitle,
+    // headerStyle: css.headerStyleNavOpt,
   })
 
   render() {
+
+    console.log(this.props);
 
     return (
 
@@ -43,6 +46,7 @@ class CodeNumberScreen extends Component {
         <View style={css.buttonContainer}>
           <Button
             onPress={() => this.props.openProfileScreen()}
+            // onPress={() => this.props.navigation.goBack()}
             title='LOG IN'
             backgroundColor='#4A525D'
             buttonStyle={css.buttonStyle}
