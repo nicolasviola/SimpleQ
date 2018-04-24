@@ -5,6 +5,9 @@ import {
   Text,
   View,
 } from 'react-native'
+import {
+  Field
+} from 'redux-form'
 
 // Style:
 import css from './PhoneNumberScreen.style'
@@ -22,6 +25,8 @@ class PhoneNumberScreen extends Component {
 
   render() {
 
+    console.log(this.props);
+
     return (
 
       <Login
@@ -34,19 +39,25 @@ class PhoneNumberScreen extends Component {
               comenzar a usar SimpleQ!
             </Text>
             <View style={css.formLabelContainer}>
-              <TextField
-                inputStyle={css.inputStyle}
+              <Field
+                component={TextField}
+                name={'telephoneNumber'}
                 clearTextOnFocus = {true}
                 placeholder = "Teléfono"
                 placeholderTextColor = 'white'
+                inputStyle={css.inputStyle}
               />
             </View>
           </View>
           <View style={css.buttonContainer}>
             <Button
-              onPress={() => this.props.openCodeNumberScreen()}
               title='CONTINUAR'
-              backgroundColor='#4A525D'
+              onPress={this.props.dirty
+                ? () => this.props.openCodeNumberScreen()
+                : null
+              }
+              disabled={!this.props.dirty}
+              backgroundColor={ 'skyblue' }
               buttonStyle={css.buttonStyle}
             />
           </View>
