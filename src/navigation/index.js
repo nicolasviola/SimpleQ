@@ -50,7 +50,7 @@ const MainScreen = DrawerNavigator({
   ProfileScreen: {
     screen: Profile,
   },
-  SignOut: {
+  PhoneNumberScreen: {
     screen: PhoneNumberScreen,
     navigationOptions: ({navigation}) =>
       vars.signOutNavigationOptions({navigation}),
