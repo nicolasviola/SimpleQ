@@ -4,7 +4,7 @@ import { BackHandler } from 'react-native'
 import { NavigationActions } from 'react-navigation'
 
 // Const:
-const exitRoutes = 'Polls'
+const exitRoutes = ['Polls', 'PhoneNumberScreen']
 
 class BackButton extends React.Component {
 
@@ -25,15 +25,14 @@ class BackButton extends React.Component {
   canExit() {
     const { nav: { routes, index } } = this.props
     const currentRouteName = this.getCurrentRoute(routes, index)
-    return currentRouteName
+    return exitRoutes.indexOf(currentRouteName) >= 0
   }
 
   onBackPress () {
-    if (this.canExit() === exitRoutes) {
+    if (this.canExit()) {
       return false
     }
     this.props.dispatch(NavigationActions.back())
-    console.log('entre true');
     return true
   }
 
