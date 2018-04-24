@@ -43,20 +43,6 @@ const Profile = StackNavigator({
   }
 })
 
-const MainScreen = DrawerNavigator({
-  PrincipalScreen: {
-    screen: PrincipalScreen,
-  },
-  ProfileScreen: {
-    screen: Profile,
-  },
-  PhoneNumberScreen: {
-    screen: PhoneNumberScreen,
-    navigationOptions: ({navigation}) =>
-      vars.signOutNavigationOptions({navigation}),
-  }
-}, vars.styleMainScreen)
-
 const Started = StackNavigator({
   PhoneNumberScreen: {
       screen: PhoneNumberScreen,
@@ -65,6 +51,20 @@ const Started = StackNavigator({
       screen: CodeNumberScreen,
   },
 })
+
+const MainScreen = DrawerNavigator({
+  PrincipalScreen: {
+    screen: PrincipalScreen,
+  },
+  ProfileScreen: {
+    screen: Profile,
+  },
+  Started: {
+    screen: Started,
+    navigationOptions: ({navigation}) =>
+      vars.signOutNavigationOptions({navigation}),
+  }
+}, vars.styleMainScreen)
 
 const appStack = {
   Started:{
