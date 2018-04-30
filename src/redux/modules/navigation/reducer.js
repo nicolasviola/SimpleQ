@@ -24,7 +24,7 @@ const navReducer = (state, action) => {
       return navigateToScreen('ProfileScreen', {}, state)
 
     case OPEN_PRINCIPAL_SCREEN:
-      return navigateToScreen('TabsScreen', {}, state)
+      return navigateToScreen('PrincipalScreen', {}, state)
 
     default:
       return Navigation.router.getStateForAction(action, state)

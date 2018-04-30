@@ -1,10 +1,5 @@
 // Dependencies:
 import React, { Component } from 'react'
-import { Button } from 'react-native-elements'
-import {
-  Text,
-  View,
-} from 'react-native'
 import {
   Field
 } from 'redux-form'
@@ -12,9 +7,14 @@ import {
 // Style:
 import css from './PhoneNumberScreen.style'
 
+// Assets:
+import logoSimpleQ from '../../../../img/logoSimpleQ.png'
+
 // Components:
 import Login from '../../layouts/Login/'
+import { View, Image } from 'react-native'
 import TextField from '../../shared/TextField'
+import Button from '../../shared/Button'
 
 class PhoneNumberScreen extends Component {
 
@@ -25,45 +25,36 @@ class PhoneNumberScreen extends Component {
 
   render() {
 
-    console.log(this.props);
-
     return (
-
-      <Login
-        title = 'Comencemos...'
-      >
+      <Login>
         <View style={css.container} >
           <View style={css.flexContainer}>
-            <Text style={css.textDescription}>
-              Por favor, inserte su número de teléfono con el código de área para
-              comenzar a usar SimpleQ!
-            </Text>
-            <View style={css.formLabelContainer}>
-              <Field
-                component={TextField}
-                name={'telephoneNumber'}
-                clearTextOnFocus = {true}
-                placeholder = "Teléfono"
-                placeholderTextColor = 'white'
-                inputStyle={css.inputStyle}
+            <View style={css.imageContainer}>
+              <Image
+                style={css.image}
+                source = {logoSimpleQ}
+              />
+            </View>
+            <View style={css.formButtonContainer}>
+              <View style={css.formLabelContainer}>
+                <Field
+                  component={TextField}
+                  name={'telephoneNumber'}
+                  clearTextOnFocus = {true}
+                  placeholder = "   +549-3415-810394"
+                  placeholderTextColor = '#A4A4A4'
+                  inputStyle={css.inputStyle}
+                />
+              </View>
+              <Button
+                title = 'CONTINUAR'
+                dirty = {this.props.dirty}
+                onButtonPress = {() => this.props.openCodeNumberScreen()}
               />
             </View>
           </View>
-          <View style={css.buttonContainer}>
-            <Button
-              title='CONTINUAR'
-              onPress={this.props.dirty
-                ? () => this.props.openCodeNumberScreen()
-                : null
-              }
-              disabled={!this.props.dirty}
-              backgroundColor={ 'skyblue' }
-              buttonStyle={css.buttonStyle}
-            />
-          </View>
         </View>
       </Login>
-
     )
 
   }

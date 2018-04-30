@@ -10,6 +10,7 @@ import vars from './navigation.vars'
 
 // Screens:
 import ProfileScreen from '../components/screens/ProfileScreen'
+import PrincipalScreen from '../components/screens/PrincipalScreen'
 import PhoneNumberScreen from '../components/screens/PhoneNumberScreen'
 import CodeNumberScreen from '../components/screens/CodeNumberScreen'
 import PollsScreen from '../components/screens/PollsScreen'
@@ -17,54 +18,52 @@ import MyPoolsScreen from '../components/screens/MyPoolsScreen'
 import ContactsScreen from '../components/screens/ContactsScreen'
 import Login from '../components/layouts/Login'
 
-const TabsScreen = TabNavigator({
-  Polls: {
-    screen: PollsScreen,
-  },
-  MyPolls: {
-    screen: MyPoolsScreen,
-  },
-  Contacts: {
-    screen: ContactsScreen,
-  },
-}, vars.styleTabsScreen)
+// const TabsScreen = TabNavigator({
+//   Polls: {
+//     screen: PollsScreen,
+//   },
+//   MyPolls: {
+//     screen: MyPoolsScreen,
+//   },
+//   Contacts: {
+//     screen: ContactsScreen,
+//   },
+// }, vars.styleTabsScreen)
+//
+// const PrincipalScreen = StackNavigator({
+//   TabsScreen: {
+//     screen: TabsScreen,
+//     navigationOptions: ({navigation}) =>
+//       vars.principalNavigationOptions({navigation})
+//   }
+// })
+//
+// const Profile = StackNavigator({
+//   ProfileScreen: {
+//     screen: ProfileScreen
+//   }
+// })
 
-const PrincipalScreen = StackNavigator({
-  TabsScreen: {
-    screen: TabsScreen,
-    navigationOptions: ({navigation}) =>
-      vars.principalNavigationOptions({navigation})
-  }
-})
-
-const Profile = StackNavigator({
-  ProfileScreen: {
-    screen: ProfileScreen
-  }
-})
-
-const Started = StackNavigator({
-  PhoneNumberScreen: {
-      screen: PhoneNumberScreen,
-  },
-  CodeNumberScreen: {
-      screen: CodeNumberScreen,
-  },
-})
-
-const MainScreen = DrawerNavigator({
+const MainScreen = StackNavigator({
   PrincipalScreen: {
     screen: PrincipalScreen,
-  },
-  ProfileScreen: {
-    screen: Profile,
-  },
-  Started: {
-    screen: Started,
-    navigationOptions: ({navigation}) =>
-      vars.signOutNavigationOptions({navigation}),
+    navigationOptions: vars.defaultNavigationOptions()
   }
-}, vars.styleMainScreen)
+})
+
+// const MainScreen = DrawerNavigator({
+//   PrincipalScreen: {
+//     screen: PrincipalScreen,
+//   },
+//   ProfileScreen: {
+//     screen: Profile,
+//   },
+//   PhoneNumberScreen: {
+//     screen: PhoneNumberScreen,
+//     navigationOptions: ({navigation}) =>
+//       vars.signOutNavigationOptions({navigation}),
+//   }
+// }, vars.styleMainScreen)
 
 const appStack = {
   Started:{
