@@ -1,5 +1,7 @@
 // Dependencies:
 import React, { PureComponent } from 'react'
+
+// Components:
 import {
   TextInput,
   View,
@@ -47,13 +49,14 @@ class TextField extends PureComponent{
             secureTextEntry={secureTextEntry}
             maxLength={maxLength}
             multiline={multiline}
+            placeholder={placeholder}
+            placeholderTextColor={placeholderTextColor}
+            underlineColorAndroid={'transparent'}
+            // keyboardType={keyboardType || 'default'}
             // onBlur={input.onBlur}
             // onFocus={input.onFocus}
             // placeholderStyle={placeholderStyle}
-            placeholder={placeholder}
-            placeholderTextColor='#878787'
-            // keyboardType={keyboardType || 'default'}
-            underlineColorAndroid={'transparent'}
+            // underlineColor={'transparent'}
             // onChangeText={value => {
             //
             //   input.onChange(value)

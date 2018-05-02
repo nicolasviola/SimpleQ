@@ -12,31 +12,49 @@ export default StyleSheet.create({
     backgroundColor: 'white',
   },
 
-  header: {
+  headerContainer: {
     height: '10%',
     width: '100%',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'white',
+  },
+
+  header: {
+    height: '100%',
+    width: '95%',
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
     backgroundColor: 'white',
+    borderBottomWidth: 2,
+    borderBottomColor: '#99BF60'
   },
 
   buttonStyle: {
-    marginLeft: 10,
-    marginRight: 10,
     height: '80%',
     width: 50,
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    marginTop: 10,
   },
 
-  textTitleContainer: {
+  titleContainer: {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
+  },
+
+  imgLogo: {
+    width: 130,
+    height: 40,
+  },
+
+  imgSide: {
+    width: 35,
+    height: 35,
   },
 
   textTitle: {

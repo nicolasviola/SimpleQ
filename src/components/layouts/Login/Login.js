@@ -1,5 +1,7 @@
 // Dependencies:
 import React, { Component } from 'react'
+
+//Components:
 import { Button } from 'react-native-elements'
 import {
   Text,

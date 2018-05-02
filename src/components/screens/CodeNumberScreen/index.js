@@ -1,19 +1,35 @@
 // Dependencies:
 import { connect } from 'react-redux'
+import { reduxForm, formValueSelector } from 'redux-form'
 import {bindActionCreators} from 'redux';
 import CodeNumberScreen from './CodeNumberScreen'
 
 // Actions:
-import { openProfileScreen } from '../../../redux/modules/navigation/actions'
+import { openPrincipalScreen } from '../../../redux/modules/navigation/actions'
 
 const mapStateToProps = (state) => {
+
+  const selector = formValueSelector('codeNumberForm')
+
   return {
     pollList: state.polls.pollList,
+    codeNumber: selector(state, 'codeNumber'),
   }
 }
 
 const mapDispatchToProps = (dispatch) => ({
-  openProfileScreen: bindActionCreators(openProfileScreen, dispatch),
+  openPrincipalScreen: bindActionCreators(openPrincipalScreen, dispatch),
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(CodeNumberScreen)
+const onSubmit = (values, dispatch, props) => ({})
+
+const reduxFormConfig = {
+  onSubmit,
+  form: 'codeNumberForm',
+  enableReinitialize: true,
+  keepDirtyOnReinitialize: true,
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(
+  reduxForm(reduxFormConfig)(CodeNumberScreen)
+)

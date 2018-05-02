@@ -10,11 +10,9 @@ export default StyleSheet.create({
 
   textInput: {
     height: 40,
-    fontSize: 18,
+    fontSize: 20,
     width: '100%',
     color: 'white',
-    borderBottomWidth: 1,
-    borderBottomColor: '#878787',
   },
 
   // error: {
