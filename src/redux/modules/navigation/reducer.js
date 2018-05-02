@@ -1,4 +1,4 @@
-// Dependencies:
+// Actions:
 import { navigateToScreen, stayInScreen } from './actions'
 
 // Navigation:

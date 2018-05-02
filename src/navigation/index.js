@@ -9,14 +9,14 @@ import {
 import vars from './navigation.vars'
 
 // Screens:
-import ProfileScreen from '../components/screens/ProfileScreen'
 import PrincipalScreen from '../components/screens/PrincipalScreen'
 import PhoneNumberScreen from '../components/screens/PhoneNumberScreen'
 import CodeNumberScreen from '../components/screens/CodeNumberScreen'
-import PollsScreen from '../components/screens/PollsScreen'
-import MyPoolsScreen from '../components/screens/MyPoolsScreen'
-import ContactsScreen from '../components/screens/ContactsScreen'
-import Login from '../components/layouts/Login'
+// import MyPoolsScreen from '../components/screens/MyPoolsScreen'
+// import ProfileScreen from '../components/screens/ProfileScreen'
+// import PollsScreen from '../components/screens/PollsScreen'
+// import ContactsScreen from '../components/screens/ContactsScreen'
+// import Login from '../components/layouts/Login'
 
 // const TabsScreen = TabNavigator({
 //   Polls: {
@@ -44,13 +44,6 @@ import Login from '../components/layouts/Login'
 //   }
 // })
 
-const MainScreen = StackNavigator({
-  PrincipalScreen: {
-    screen: PrincipalScreen,
-    navigationOptions: vars.defaultNavigationOptions()
-  }
-})
-
 // const MainScreen = DrawerNavigator({
 //   PrincipalScreen: {
 //     screen: PrincipalScreen,
@@ -65,9 +58,20 @@ const MainScreen = StackNavigator({
 //   }
 // }, vars.styleMainScreen)
 
+const MainScreen = StackNavigator({
+  PrincipalScreen: {
+    screen: PrincipalScreen,
+    navigationOptions: vars.defaultNavigationOptions()
+  }
+})
+
 const appStack = {
   Started:{
-    screen: Started,
+    screen: PhoneNumberScreen,
+    navigationOptions: vars.defaultNavigationOptions()
+  },
+  CodeNumberScreen:{
+    screen: CodeNumberScreen,
     navigationOptions: vars.defaultNavigationOptions()
   },
   MainScreen: {

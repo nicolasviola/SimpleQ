@@ -6,7 +6,7 @@ import {
 import { createReduxBoundAddListener } from 'react-navigation-redux-helpers'
 
 // Nav:
-import Navigation from '../../../navigation'
+import Navigation from '../../navigation'
 
 class AppNavigator extends React.Component {
   // componentWillMount() {

@@ -1,6 +1,6 @@
 // Dependencies:
 import { connect } from 'react-redux'
-import {bindActionCreators} from 'redux'
+import { bindActionCreators } from 'redux'
 
 // Components:
 import PrincipalScreen from './PrincipalScreen'

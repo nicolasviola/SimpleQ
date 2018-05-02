@@ -148,6 +148,8 @@ export default StyleSheet.create({
   },
 
   modalFooterText: {
+    paddingTop: 15,
+    paddingLeft: 15,
     fontSize: 12,
     color: '#D6E0AA',
   }

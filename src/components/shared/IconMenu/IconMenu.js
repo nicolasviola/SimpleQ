@@ -1,5 +1,7 @@
 // Dependencies:
 import React, { PureComponent } from 'react'
+
+// Components:
 import {
   View,
   Text,

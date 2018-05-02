@@ -1,10 +1,10 @@
 // Dependencies:
 import React, { Component } from 'react'
-import { Provider } from 'react-redux'
-import BackButton from './components/screens/AppNavigator/BackButton'
 
 // Components:
-import Navigation from './components/screens/AppNavigator'
+import { Provider } from 'react-redux'
+import BackButton from './components/AppNavigator/BackButton'
+import Navigation from './components/AppNavigator'
 import configureStore from './store'
 
 export default class App extends Component {

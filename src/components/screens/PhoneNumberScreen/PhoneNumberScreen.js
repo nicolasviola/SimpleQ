@@ -1,20 +1,20 @@
 // Dependencies:
 import React, { Component } from 'react'
+
+// Components:
 import {
   Field
 } from 'redux-form'
+import Login from '../../layouts/Login/'
+import { View, Image } from 'react-native'
+import TextField from '../../shared/TextField'
+import Button from '../../shared/Button'
 
 // Style:
 import css from './PhoneNumberScreen.style'
 
 // Assets:
 import logoSimpleQ from '../../../../img/logoSimpleQ.png'
-
-// Components:
-import Login from '../../layouts/Login/'
-import { View, Image } from 'react-native'
-import TextField from '../../shared/TextField'
-import Button from '../../shared/Button'
 
 class PhoneNumberScreen extends Component {
 
