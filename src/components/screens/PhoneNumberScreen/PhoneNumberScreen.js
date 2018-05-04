@@ -26,47 +26,47 @@ class PhoneNumberScreen extends Component {
 
   // Deep Linking configuration:
   componentDidMount() {
+  if (Platform.OS === 'android') {
+    Linking.getInitialURL().then(url => {
 
-    Linking.addEventListener('url', this.handleOpenURL);
+      console.log('epaa', url)
+      this.navigate(url)
 
+    })
+    .catch((err) => {
+
+      console.log(err)
+
+    })
+  } else {
+      Linking.addEventListener('url', this.handleOpenURL)
+    }
   }
 
-  componentWillUnmount() {
-
-    Linking.removeEventListener('url', this.handleOpenURL);
-
+  componentWillUnmount() { // C
+    Linking.removeEventListener('url', this.handleOpenURL)
   }
-
   handleOpenURL = (event) => {
-
-    if (Platform.OS === 'android') {
-      Linking.getInitialURL().then(url => {
-        this.navigate(url)
-      })
-      .catch((err) => {
-
-        console.log(err)
-
-      })
-    } else this.navigate(event.url);
-
+    console.log(event.url)
+    this.navigate(event.url)
   }
-
-  navigate = (url) => {
-
-    const { navigate } = this.props.navigation;
-
-    const route = url.replace(/.*?:\/\//g, '');
+  navigate = (url) => { // E
+    const { navigate } = this.props.navigation
+    const route = url.replace(/.*?:\/\//g, '')
     // const id = route.match(/\/([^\/]+)\/?$/)[1];
-    const routeName = route.split('/')[0];
-    if (routeName === 'encuesta') {
+    const routeName = route.split('/')[0]
+
+    console.log(routeName)
+
+    if (routeName === 'simpleq.com/encuesta') {
+
 
       navigate('PrincipalScreen')
-      
+
     }
 
   }
-
+  
   render() {
 
 
