@@ -6,7 +6,7 @@ import {
   Field
 } from 'redux-form'
 import Login from '../../layouts/Login/'
-import { View, Image } from 'react-native'
+import { View, Image, Platform, Linking } from 'react-native'
 import TextField from '../../shared/TextField'
 import Button from '../../shared/Button'
 
@@ -18,14 +18,60 @@ import logoSimpleQ from '../../../../img/logoSimpleQ.png'
 
 class PhoneNumberScreen extends Component {
 
+  // Navigation:
   static navigationOptions = ({navigation}) => ({
     drawerLockMode: 'locked-closed',
     header: null,
   })
 
+  // Deep Linking configuration:
+  componentDidMount() {
+
+    Linking.addEventListener('url', this.handleOpenURL);
+
+  }
+
+  componentWillUnmount() {
+
+    Linking.removeEventListener('url', this.handleOpenURL);
+
+  }
+
+  handleOpenURL = (event) => {
+
+    if (Platform.OS === 'android') {
+      Linking.getInitialURL().then(url => {
+        console.log('entro: ', url);
+        this.navigate(url)
+      })
+      .catch((err) => {
+
+        console.log(err)
+
+      })
+    } else this.navigate(event.url);
+
+  }
+
+  navigate = (url) => {
+
+    const { navigate } = this.props.navigation;
+
+    const route = url.replace(/.*?:\/\//g, '');
+    // const id = route.match(/\/([^\/]+)\/?$/)[1];
+    const routeName = route.split('/')[0];
+    console.log('routeName: ', routeName);
+    if (routeName === 'encuesta') {
+      navigate('PrincipalScreen')
+    }
+
+  }
+
   render() {
 
+
     return (
+
       <Login>
         <View style={css.container} >
           <View style={css.flexContainer}>
@@ -55,6 +101,7 @@ class PhoneNumberScreen extends Component {
           </View>
         </View>
       </Login>
+
     )
 
   }

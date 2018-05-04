@@ -3,8 +3,8 @@ import React, { Component } from 'react'
 
 // Components:
 import { Provider } from 'react-redux'
-import BackButton from './components/AppNavigator/BackButton'
-import Navigation from './components/AppNavigator'
+import BackButton from './components/appNavigator/BackButton'
+import Navigation from './components/appNavigator'
 import configureStore from './store'
 
 export default class App extends Component {
