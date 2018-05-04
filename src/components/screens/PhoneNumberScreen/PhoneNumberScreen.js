@@ -41,7 +41,6 @@ class PhoneNumberScreen extends Component {
 
     if (Platform.OS === 'android') {
       Linking.getInitialURL().then(url => {
-        console.log('entro: ', url);
         this.navigate(url)
       })
       .catch((err) => {
@@ -60,9 +59,10 @@ class PhoneNumberScreen extends Component {
     const route = url.replace(/.*?:\/\//g, '');
     // const id = route.match(/\/([^\/]+)\/?$/)[1];
     const routeName = route.split('/')[0];
-    console.log('routeName: ', routeName);
     if (routeName === 'encuesta') {
+
       navigate('PrincipalScreen')
+      
     }
 
   }

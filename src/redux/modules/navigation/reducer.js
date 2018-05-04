@@ -18,7 +18,7 @@ const navReducer = (state, action) => {
       return navigateToScreen('CodeNumberScreen', {}, state)
 
     case OPEN_PHONE_NUMBER_SCREEN:
-      return navigateToScreen('PhoneNumberScreen', {}, state)
+      return navigateToScreen('Started', {}, state)
 
     case OPEN_PROFILE_SCREEN:
       return navigateToScreen('ProfileScreen', {}, state)

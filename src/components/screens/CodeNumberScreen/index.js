@@ -8,6 +8,7 @@ import CodeNumberScreen from './CodeNumberScreen'
 
 // Actions:
 import { openPrincipalScreen } from '../../../redux/modules/navigation/actions'
+import { openPhoneNumberScreen } from '../../../redux/modules/navigation/actions'
 
 const mapStateToProps = (state) => {
 
@@ -21,6 +22,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => ({
   openPrincipalScreen: bindActionCreators(openPrincipalScreen, dispatch),
+  openPhoneNumberScreen: bindActionCreators(openPhoneNumberScreen, dispatch),
 })
 
 const onSubmit = (values, dispatch, props) => ({})

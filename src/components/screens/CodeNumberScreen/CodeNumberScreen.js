@@ -30,7 +30,7 @@ class CodeNumberScreen extends Component {
 
       <Login
         title = 'Código de Verificación'
-        back = {() => this.props.navigation.navigate('PhoneNumberScreen')}
+        back = {() => this.props.openPhoneNumberScreen()}
       >
         <View style={css.container} >
           <View style={css.flexContainer}>
