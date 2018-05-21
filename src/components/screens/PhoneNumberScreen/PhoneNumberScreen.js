@@ -29,7 +29,6 @@ class PhoneNumberScreen extends Component {
   if (Platform.OS === 'android') {
     Linking.getInitialURL().then(url => {
 
-      console.log('epaa', url)
       this.navigate(url)
 
     })
@@ -58,7 +57,7 @@ class PhoneNumberScreen extends Component {
 
     console.log(routeName)
 
-    if (routeName === 'simpleq.com/encuesta') {
+    if (routeName === 'simpleq.com') {
 
 
       navigate('PrincipalScreen')
@@ -66,7 +65,7 @@ class PhoneNumberScreen extends Component {
     }
 
   }
-  
+
   render() {
 
 
