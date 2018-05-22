@@ -6,19 +6,18 @@ export default StyleSheet.create({
   container: {
     height: '90%',
     width: '100%',
+    paddingTop: '10%',
     display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: 'white',
-    marginBottom: '10%',
+    justifyContent: 'flex-start',
+    alignItems: 'flex-start',
   },
 
   flexContainer: {
-    height: '60%',
+    height: '100%',
     width: '100%',
     display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'center',
+    justifyContent: 'flex-start',
+    alignItems: 'flex-start',
   },
 
   imageContainer: {
@@ -27,7 +26,7 @@ export default StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     width: '100%',
-    height: '30%',
+    height: '27%',
   },
 
   image: {
@@ -59,42 +58,17 @@ export default StyleSheet.create({
     borderBottomWidth: 3,
   },
 
-  buttonContainer: {
-    width: '75%',
-    marginLeft: '12.5%',
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginBottom: 80,
-  },
-
-  buttonActivate: {
+  buttonTextContainer: {
+    marginTop: 40,
     width: '100%',
-    height: 35,
-    borderRadius: 20,
-    display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#91BD41',
   },
 
-  buttonDisabled: {
-    width: '100%',
-    height: 35,
-    borderRadius: 20,
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: 'grey',
-  },
-
-  textButtonActivate: {
-    fontSize: 20,
-    color: 'white',
-  },
-
-  textButtonDisabled: {
-    fontSize: 20,
-    color: 'black',
-  },
+  buttonText: {
+    color: '#00A0C9',
+    fontSize: 16,
+    fontWeight: '600',
+  }
 
 })

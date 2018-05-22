@@ -6,9 +6,10 @@ import {
   Text,
   View,
   Image,
+  TouchableOpacity,
 } from 'react-native'
-import { Field } from 'redux-form'
 import Login from '../../layouts/Login/'
+import { Field } from 'redux-form'
 import TextField from '../../shared/TextField'
 import Button from '../../shared/Button'
 
@@ -27,11 +28,7 @@ class CodeNumberScreen extends Component {
   render() {
 
     return (
-
-      <Login
-        title = 'Código de Verificación'
-        back = {() => this.props.openPhoneNumberScreen()}
-      >
+      <Login>
         <View style={css.container} >
           <View style={css.flexContainer}>
             <View style={css.imageContainer}>
@@ -56,6 +53,11 @@ class CodeNumberScreen extends Component {
                 dirty = {this.props.dirty}
                 onButtonPress = {() => this.props.openPrincipalScreen()}
               />
+              <TouchableOpacity style={css.buttonTextContainer}>
+                <Text style={css.buttonText}>
+                  No recibí el código
+                </Text>
+              </TouchableOpacity>
             </View>
           </View>
         </View>

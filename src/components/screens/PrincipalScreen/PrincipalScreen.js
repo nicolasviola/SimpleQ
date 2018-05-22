@@ -6,7 +6,7 @@ import {
   Text,
   View,
   Image,
-  TouchableHighlight,
+  TouchableOpacity,
   Modal,
 } from 'react-native'
 import Content from '../../layouts/Content'
@@ -73,28 +73,28 @@ class PrincipalScreen extends Component {
               </View>
             </View>
             <View style = {css.modalBody}>
-              <TouchableHighlight style = {css.modalImageLargeContainer}>
+              <TouchableOpacity style = {css.modalImageLargeContainer}>
                 <Image
                   source = {imgPositive}
                   style = {css.modalImageLarge}
                 />
-              </TouchableHighlight>
-              <TouchableHighlight style = {css.modalImageLarge}>
+              </TouchableOpacity>
+              <TouchableOpacity style = {css.modalImageLarge}>
                 <Image
                   source = {imgNegative}
                   style = {css.modalImageLarge}
                 />
-              </TouchableHighlight>
+              </TouchableOpacity>
             </View>
             <View style={css.modalFooter}>
-              <TouchableHighlight
+              <TouchableOpacity
                 onPress={() => {
                   this.setModalVisible(!this.state.modalVisible)
                 }}>
                 <Text style={css.modalFooterText}>
                   Cerrar
                 </Text>
-              </TouchableHighlight>
+              </TouchableOpacity>
             </View>
           </View>
         </View>
@@ -142,7 +142,7 @@ class PrincipalScreen extends Component {
                 </Text>
               </View>
             </View>
-            <TouchableHighlight
+            <TouchableOpacity
               style={css.imageContainer}
               onPress={() => {
                 this.setModalVisible(true)
@@ -152,7 +152,7 @@ class PrincipalScreen extends Component {
                 source = {imgPollType}
                 style = {css.longImg}
               />
-            </TouchableHighlight>
+            </TouchableOpacity>
           </View>
 
         )

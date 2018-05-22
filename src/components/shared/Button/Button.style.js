@@ -8,7 +8,6 @@ export default StyleSheet.create({
     marginLeft: '12.5%',
     justifyContent: 'center',
     alignItems: 'center',
-    marginBottom: 80,
   },
 
   buttonActivate: {
